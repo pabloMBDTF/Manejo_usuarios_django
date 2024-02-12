@@ -19,7 +19,7 @@ class UserManager(BaseUserManager, models.Manager):
         return user
     
     def create_user(self, userName, email, password = None, **extraFields):
-        return self._createUser(userName, email, password, False, False, False, **extraFields)
+        return self._createUser(userName, email, password, False, False, True, **extraFields)
 
     def create_superuser(self, userName, email, password = None, **extraFields):
         return self._createUser(userName, email, password, True, True, True, **extraFields)

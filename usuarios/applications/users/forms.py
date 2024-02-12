@@ -62,6 +62,8 @@ class UserLogin(forms.Form):
         cleaned_data = super(UserLogin, self).clean()
         username = self.cleaned_data['userName']
         password = self.cleaned_data['password']
+        print(username)
+        print(password)
 
         if not authenticate(username = username, password = password):
             raise forms.ValidationError('Los datos de el usuario no se han podido validar.')
